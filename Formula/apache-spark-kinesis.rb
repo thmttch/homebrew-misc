@@ -4,9 +4,9 @@ class ApacheSparkKinesis < Formula
   homepage "http://spark.apache.org/"
   head "https://github.com/apache/spark.git"
   #url "http://d3kbcqa49mib13.cloudfront.net/spark-1.0.0-bin-hadoop2.tgz"
-  url "http://thmttch.net/spark-1.1.0-SNAPSHOT-bin-hadoop2.4.0.tar.gz"
+  url "http://thmttch.net/spark-1.0.3-SNAPSHOT-bin-2.4.0.tgz"
   version "1.1.0-SNAPSHOT"
-  sha1 "4ba8be4a91d9a597edf892a394dde7df620be391"
+  sha1 "73790a1dc239782e6e67d834ecbec87a4ec9eaff"
 
   def install
     rm_f Dir["bin/*.cmd"]
