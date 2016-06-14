@@ -38,7 +38,12 @@ class Hnative27 < Formula
     #system %w(mvn package -Pdist,native -DskipTests -Dtar)
     #system "mvn", "package", "-Pdist", "-DskipTests", "-Dtar"
     #system({ "OPENSSL_ROOT_DIR" => "/usr/local/opt/openssl" }, "mvn", "package", "-Pdist,native", "-DskipTests", "-Dtar")
-    system "OPENSSL_ROOT_DIR=/usr/local/opt/openssl mvn package -Pdist,native -DskipTests -Dtar"
+    # https://svn.apache.org/repos/asf/hadoop/common/trunk/BUILDING.txt
+    system "OPENSSL_ROOT_DIR=/usr/local/opt/openssl SNAPPY_INCLUDE_DIR=/Users/mchu/Downloads/snappy " +
+      "mvn package -X -e -Pdist,native -DskipTests -Dtar " +
+      ""
+      #"-Drequire.snappy"
+      #"-Drequire.snappy -Dsnappy.lib=/Users/mchu/Downloads/snappy -Dbundle.snappy"
 
     lib.install Dir[
       "hadoop-dist/target/hadoop-#{version}.tar.gz",
